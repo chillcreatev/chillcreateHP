@@ -7,18 +7,13 @@
   
   <link rel="icon" href="logo/favicon.png" type="image/png">
 
-  <!-- React, ReactDOM, Babel -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'M PLUS Rounded 1c', sans-serif; scroll-behavior: smooth; }
-    
-    /* 背景のふわふわアニメーション */
     .animate-blob { animation: blob 7s infinite; }
     @keyframes blob {
       0% { transform: translate(0px, 0px) scale(1); }
@@ -27,33 +22,20 @@
       100% { transform: translate(0px, 0px) scale(1); }
     }
     .animation-delay-2000 { animation-delay: 2s; }
-
     .hover-pop { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
     .hover-pop:hover { transform: translateY(-20px) scale(1.05); }
-
     .hover-tilt { transition: transform 0.3s ease-in-out; }
     .hover-tilt:hover { transform: rotate(10deg) scale(1.1); }
-
     @keyframes slideFadeIn {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-slide-fade {
-      animation: slideFadeIn 0.5s ease-out forwards;
-    }
-
-    .text-pretty {
-      text-wrap: pretty;
-      word-break: auto-phrase;
-    }
-
+    .animate-slide-fade { animation: slideFadeIn 0.5s ease-out forwards; }
+    .text-pretty { text-wrap: pretty; }
     .custom-scroll::-webkit-scrollbar { width: 6px; }
     .custom-scroll::-webkit-scrollbar-track { background: transparent; }
     .custom-scroll::-webkit-scrollbar-thumb { background: #fda4af; border-radius: 10px; }
-
-    .animate-ping-slow {
-      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
+    .animate-ping-slow { animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
     @keyframes ping {
       75%, 100% { transform: scale(1.5); opacity: 0; }
     }
@@ -87,12 +69,12 @@
     };
 
     const characters = [
-      { id: 'chill', name: '海老瀬ちる', furigana: 'えびせちる', illustrator: 'ペペロンロン', color: '#ff7e79', colorName: '桜えびピンク', motif: '桜エビ・漁港', from: '由比', area: '静岡エリア', catch: '静岡を第2の秋葉原にするぞ～！', mainImg: 'main/chill.png', cardImg: 'card/chill.png', miniImg: 'mini/mini_chill.png', nuiImg: 'nui/chill.PNG', voiceSrc: 'voice/chill.wav' },
-      { id: 'kohaku', name: '白金琥珀', furigana: 'ぷらちなこはく', illustrator: 'くるぽ', color: '#fbbf24', colorName: 'イエローホワイト', motif: '観光・グルメ', from: '熱海', area: '熱海エリア', catch: 'ごきげんよう♪白金琥珀ですわ！', mainImg: 'main/kohaku.png', cardImg: 'card/kohaku.png', miniImg: 'mini/mini_kohaku.png', nuiImg: 'nui/kohaku.PNG', voiceSrc: 'voice/kohaku.wav' },
-      { id: 'chacha', name: '茶々', furigana: 'ちゃちゃ', illustrator: 'yazawa', color: '#4ade80', colorName: '緑茶グリーン', motif: '静岡茶・自然', from: '掛川', area: '掛川エリア', catch: '朝ごはんにラーメンは普通だら？', mainImg: 'main/chacha.png', cardImg: 'card/chacha.png', miniImg: 'mini/mini_chacha.png', nuiImg: 'nui/chacha.PNG', voiceSrc: 'voice/chacha.wav' },
-      { id: 'type10', name: 'Type-10', furigana: 'たいぷてん', illustrator: '伊澄', color: '#3b82f6', colorName: '富士山ブルー', motif: '富士山・電子機器', from: '富士', area: '新富士エリア', catch: '今日もお疲れ様でした。温かいお茶をご用意しますね( ^^) _旦~~', mainImg: 'main/10.png', cardImg: 'card/10.png', miniImg: 'mini/mini_10.png', nuiImg: 'nui/10.PNG', voiceSrc: 'voice/10.wav' },
-      { id: 'coco', name: '錨ココ', furigana: 'いかりここ', illustrator: 'AME', color: '#f97316', colorName: '甘夏オレンジ', motif: '商業・祭り', from: '浜松', area: '浜松エリア', catch: 'これはこれはお目が高いにゃあ～旦那さん！', mainImg: 'main/coco.png', cardImg: 'card/COCO.png', miniImg: 'mini/mini_coco.png', nuiImg: 'nui/coco.PNG', voiceSrc: 'voice/coco.wav' },
-      { id: 'hachi', name: '錨ハチ', furigana: 'いかりはち', illustrator: 'イブキ', color: '#d946ef', colorName: 'ピンクパープル', motif: 'アウトドア・バイク', from: '三島', area: '三島エリア', catch: '外で食べるコロッケが一番美味しいんだから！', mainImg: 'main/hachi.png', cardImg: 'card/HACHI.png', miniImg: 'mini/mini_hachi.png', nuiImg: 'nui/hachi.PNG', voiceSrc: 'voice/hachi.wav' }
+      { id: 'chill', name: '海老瀬ちる', furigana: 'えびせちる', illustrator: 'ペペロンロン', color: '#ff7e79', colorName: '桜えびピンク', motif: '桜エビ・漁港', from: '由比', area: '静岡エリア', catch: '静岡を第2の秋葉原にするぞ～！', mainImg: 'main/chill.png', cardImg: 'card/chill.png', nuiImg: 'nui/chill.PNG', voiceSrc: 'voice/chill.wav' },
+      { id: 'kohaku', name: '白金琥珀', furigana: 'ぷらちなこはく', illustrator: 'くるぽ', color: '#fbbf24', colorName: 'イエローホワイト', motif: '観光・グルメ', from: '熱海', area: '熱海エリア', catch: 'ごきげんよう♪白金琥珀ですわ！', mainImg: 'main/kohaku.png', cardImg: 'card/kohaku.png', nuiImg: 'nui/kohaku.PNG', voiceSrc: 'voice/kohaku.wav' },
+      { id: 'chacha', name: '茶々', furigana: 'ちゃちゃ', illustrator: 'yazawa', color: '#4ade80', colorName: '緑茶グリーン', motif: '静岡茶・自然', from: '掛川', area: '掛川エリア', catch: '朝ごはんにラーメンは普通だら？', mainImg: 'main/chacha.png', cardImg: 'card/chacha.png', nuiImg: 'nui/chacha.PNG', voiceSrc: 'voice/chacha.wav' },
+      { id: 'type10', name: 'Type-10', furigana: 'たいぷてん', illustrator: '伊澄', color: '#3b82f6', colorName: '富士山ブルー', motif: '富士山・電子機器', from: '富士', area: '新富士エリア', catch: '今日もお疲れ様でした。温かいお茶をご用意しますね( ^^) _旦~~', mainImg: 'main/10.png', cardImg: 'card/10.png', nuiImg: 'nui/10.PNG', voiceSrc: 'voice/10.wav' },
+      { id: 'coco', name: '錨ココ', furigana: 'いかりここ', illustrator: 'AME', color: '#f97316', colorName: '甘夏オレンジ', motif: '商業・祭り', from: '浜松', area: '浜松エリア', catch: 'これはこれはお目が高いにゃあ～旦那さん！', mainImg: 'main/coco.png', cardImg: 'card/COCO.png', nuiImg: 'nui/coco.PNG', voiceSrc: 'voice/coco.wav' },
+      { id: 'hachi', name: '錨ハチ', furigana: 'いかりはち', illustrator: 'イブキ', color: '#d946ef', colorName: 'ピンクパープル', motif: 'アウトドア・バイク', from: '三島', area: '三島エリア', catch: '外で食べるコロッケが一番美味しいんだから！', mainImg: 'main/hachi.png', cardImg: 'card/HACHI.png', nuiImg: 'nui/hachi.PNG', voiceSrc: 'voice/hachi.wav' }
     ];
 
     const newsList = [
@@ -103,23 +85,17 @@
 
     const SmartImage = ({ src, alt, className = "", style = {}, objectMode = "object-contain" }) => {
       const [error, setError] = useState(false);
-      const fallbackBg = "bg-slate-50"; 
-      if (!src || error) {
-        return (
-          <div className={`${fallbackBg} border-none flex flex-col items-center justify-center text-slate-400 overflow-hidden text-[10px] ${className}`}>
-            <span className="font-bold text-center leading-tight">{alt}<br/>(画像待ち)</span>
-          </div>
-        );
-      }
-      return (
-        <img src={src} alt={alt} style={style} className={`${objectMode} ${className}`} onError={() => setError(true)} />
-      );
+      return !src || error ? (
+        <div className={`bg-slate-50 border-none flex flex-col items-center justify-center text-slate-400 text-[10px] ${className}`}>
+           <span className="font-bold text-center">{alt}<br/>(画像待ち)</span>
+        </div>
+      ) : <img src={src} alt={alt} style={style} className={`${objectMode} ${className}`} onError={() => setError(true)} />;
     };
 
     const SectionTitle = ({ en, ja }) => (
-      <div className="text-center mb-12 relative text-pretty">
-        <h2 className="text-4xl md:text-6xl font-black text-rose-400 tracking-wider uppercase leading-none">{en}</h2>
-        <p className="text-sm md:text-base font-bold text-rose-500 mt-2 tracking-widest">{ja}</p>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-6xl font-black text-rose-400 tracking-wider uppercase">{en}</h2>
+        <p className="text-sm md:text-base font-bold text-rose-500 mt-2">{ja}</p>
         <div className="w-16 h-1 bg-rose-400 mx-auto mt-4 rounded-full"></div>
       </div>
     );
@@ -127,12 +103,9 @@
     function App() {
       const [selectedChar, setSelectedChar] = useState(null);
       const [showTopBtn, setShowTopBtn] = useState(false);
-      const [copyStatus, setCopyStatus] = useState("コピーする");
       const [isPlaying, setIsPlaying] = useState(false);
       const audioRef = useRef(null);
       
-      const contactEmail = "chillcreate.v@gmail.com";
-
       useEffect(() => {
         const handleScroll = () => setShowTopBtn(window.scrollY > 300);
         window.addEventListener('scroll', handleScroll);
@@ -140,32 +113,12 @@
       }, []);
 
       const scrollTo = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-          const offset = 80;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = element.getBoundingClientRect().top;
-          window.scrollTo({ top: elementRect - bodyRect - offset, behavior: 'smooth' });
-        }
-      };
-
-      const handleCopyEmail = () => {
-        const input = document.createElement('input');
-        input.value = contactEmail;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        setCopyStatus("コピー完了！");
-        setTimeout(() => setCopyStatus("コピーする"), 2000);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       };
 
       const playVoice = (src) => {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current = null;
-          setIsPlaying(false);
-        }
+        if (audioRef.current) audioRef.current.pause();
         const audio = new Audio(src);
         audioRef.current = audio;
         audio.play();
@@ -174,341 +127,55 @@
       };
 
       return (
-        <div className="text-slate-800 selection:bg-rose-400 selection:text-white pb-1 relative">
-          
-          {/* Header */}
+        <div className="text-slate-800 pb-1">
           <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-sm">
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-              <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('hero')}>
-                <div className="w-10 h-10 transition-transform group-hover:scale-110 flex items-center justify-center">
-                  <SmartImage src="logo/chillcreate_logo.png" alt="ロゴ" className="w-full h-full" />
-                </div>
-                <div className="font-black text-rose-500 text-xl tracking-wider uppercase whitespace-nowrap text-pretty">ちるクリエイト</div>
+              <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('hero')}>
+                <div className="w-10 h-10"><SmartImage src="logo/chillcreate_logo.png" alt="ロゴ" /></div>
+                <div className="font-black text-rose-500 text-xl">ちるクリエイト</div>
               </div>
-              <nav className="hidden md:flex gap-6 font-bold text-sm text-slate-600 uppercase">
-                {['NEWS', 'ABOUT', 'CHARACTERS', 'LINKS', 'GUIDELINES', 'CONTACT'].map((item) => (
-                  <button key={item} onClick={() => scrollTo(item.toLowerCase())} className="hover:text-rose-400 transition-colors uppercase">
-                    {item}
-                  </button>
+              <nav className="hidden md:flex gap-6 font-bold text-sm">
+                {['NEWS', 'ABOUT', 'CHARACTERS', 'CONTACT'].map(item => (
+                  <button key={item} onClick={() => scrollTo(item.toLowerCase())} className="hover:text-rose-400">{item}</button>
                 ))}
               </nav>
             </div>
           </header>
 
-          {/* 1. Hero Area: 【修正】SCROLLを上に移動、ロゴを追加 */}
-          <section id="hero" className="relative min-h-[300px] sm:min-h-[10%] flex flex-col items-center justify-end bg-gradient-to-br from-rose-50 to-pink-50 overflow-hidden text-center pt-0 sm:pt-0">
-            {/* 背景装飾 */}
-            <div className="absolute top-100 left-0 w-full h-full opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #fb7185 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-            <div className="absolute -top-30 -right-40 w-96 h-0 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-0 animate-blob"></div>
-            <div className="absolute top-30 -left-40 w-96 h-0 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-0 animate-blob animation-delay-2000"></div>
-            
-            {/* 【修正】スクロール指示をさらに上（top-[15%]）へ、ロゴ付き＆白色に変更 */}
-            <div className="absolute absolute top-[30%] sm:top-[25%] animate-bounce flex flex-col items-center z-10">
-              <div className="w-10 h-10 mb-2 drop-shadow-md">
-                <SmartImage src="logo/chillcreate_logo.png" alt="スクロールロゴ" />
-              </div>
-              <span className="text-[10px] tracking-[0.4em] mb-2 font-black uppercase text-rose-500 drop-shadow-sm opacity-90">Scroll</span>
-              <div className="w-px h-12 bg-white opacity-40"></div>
-            </div>
-
-            <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col items-center px-4">
-              <div className="w-full flex justify-center items-end">
-                <SmartImage 
-                  src="main/all_characters.png" 
-                  alt="ちるクリエイト メンバー集合イラスト" 
-                  className="h-[45vh] sm:h-[70vh] md:h-[80vh] w-auto max-w-full object-contain object-bottom drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)]" 
-                />
-              </div>
-            </div>
-
-          {/* 2. News Area */}
-          <section id="news" className="py-20 px-4 bg-white relative">
-            <div className="max-w-4xl mx-auto">
-              <SectionTitle en="NEWS" ja="最新情報" />
-              <div className="flex flex-col gap-4 text-pretty">
-                {newsList.map((news, i) => (
-                  <a key={i} href={news.link} className="group block bg-rose-50/50 border border-rose-100 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-rose-300 hover:-translate-y-1 relative overflow-hidden text-left text-pretty">
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-rose-400 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
-                    <div className="flex flex-col md:flex-row md:items-center gap-4">
-                      <div className="flex items-center gap-4 md:w-1/3 text-xs md:text-sm">
-                        <span className="text-slate-500 font-mono font-bold">{news.date}</span>
-                        <span className="font-bold px-3 py-1 rounded-full bg-rose-100 text-rose-600 uppercase tracking-widest text-[10px] whitespace-nowrap">{news.category}</span>
-                      </div>
-                      <h3 className="font-bold text-slate-800 md:w-2/3 group-hover:text-rose-500 flex items-center justify-between text-pretty">
-                        {news.title}
-                        <Icon name="chevron-right" className="w-5 h-5 text-slate-400 group-hover:text-rose-400" />
-                      </h3>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
+          <section id="hero" className="min-h-screen flex flex-col items-center justify-center bg-rose-50 pt-16">
+            <SmartImage src="main/all_characters.png" alt="集合" className="h-[70vh]" />
           </section>
 
-          {/* 3. About Area */}
-          <section id="about" className="py-20 px-4 bg-rose-100 relative overflow-hidden text-center text-pretty">
-            <div className="absolute top-0 left-0 w-full h-10 bg-white" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)' }}></div>
-            <div className="absolute bottom-0 left-0 w-full h-10 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 100%)' }}></div>
-            <div className="max-w-4xl mx-auto relative z-10 py-10">
-              <SectionTitle en="ABOUT" ja="ちるクリエイトについて" />
-              <div className="bg-white/60 backdrop-blur-md border border-rose-200 rounded-3xl p-8 md:p-12 shadow-xl mb-12 text-center text-pretty">
-                <h3 className="text-2xl md:text-3xl font-black mb-6 text-rose-500 text-center">静岡発！萌えキャラクターコンテンツ</h3>
-                <p className="leading-loose text-slate-700 md:text-lg font-bold text-pretty max-w-2xl mx-auto text-center text-pretty">
-                  『ちるクリエイト』は、静岡県を拠点に活動する個人製作サークルです。<br className="hidden md:block" />
-                  静岡県内に停まる新幹線駅エリアをモチーフにした個性豊かなキャラクターコンテンツを制作しています。<br className="hidden md:block" />
-                  ゲーム開発、動画制作、グッズ展開を通じて静岡から『萌え』を発信します！<br />
-                  めざせコミックマーケット！
-                </p>
-              </div>
-              <div className="flex justify-center items-center gap-2 md:gap-4 w-full max-w-4xl mx-auto flex-nowrap px-2 text-center">
-                {characters.map((char) => (
-                  <div key={char.id} className="w-1/6 hover-tilt cursor-pointer drop-shadow-md shrink">
-                    <SmartImage src={char.nuiImg} alt={`${char.name} ぬい`} className="w-full h-full" />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <section id="news" className="py-20 px-4 max-w-4xl mx-auto">
+            <SectionTitle en="NEWS" ja="最新情報" />
+            {newsList.map((n, i) => <div key={i} className="mb-4 p-4 border rounded-xl">{n.date} - {n.title}</div>)}
           </section>
 
-          {/* 4. Characters Area */}
-          <section id="characters" className="py-24 px-4 bg-white text-center text-pretty">
-            <div className="max-w-7xl mx-auto">
-              <SectionTitle en="CHARACTERS" ja="キャラクター" />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {characters.map((char) => (
-                  <div key={char.id} onClick={() => setSelectedChar(char)} 
-                    className="group relative bg-white rounded-[40px] shadow-2xl border-2 border-transparent transition-all duration-500 hover:-translate-y-3 flex flex-col h-full overflow-hidden w-full p-0 hover:border-rose-400 isolate"
-                    style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
-                  >
-                    <div className="relative w-full aspect-square bg-slate-50 flex items-center justify-center overflow-hidden text-pretty">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-20 transition-transform duration-700 group-hover:scale-150" style={{ backgroundColor: char.color }}></div>
-                      <div className="absolute inset-0 flex items-center justify-center p-0 z-10 overflow-hidden rounded-[40px]">
-                        <SmartImage src={char.cardImg} alt={`${char.name} バストアップ`} className="drop-shadow-lg w-full h-full" />
-                      </div>
-                      <div className="absolute bottom-6 right-6 z-20 bg-black/60 text-white text-[12px] font-black py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 backdrop-blur-sm uppercase tracking-widest">
-                        <Icon name="external-link" className="w-4 h-4" /> Details
-                      </div>
-                    </div>
-                    <div className="p-10 flex-grow flex flex-col bg-white relative z-20 border-t border-slate-100 text-left text-pretty">
-                      <div className="flex justify-between items-start mb-6 text-left">
-                        <div>
-                          <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1 text-left">{char.furigana}</p>
-                          <h3 className="text-3xl font-black text-slate-800 text-left">{char.name}</h3>
-                        </div>
-                        <span className="text-[12px] font-black px-4 py-1.5 rounded-full text-white shadow-md tracking-wider whitespace-nowrap" style={{ backgroundColor: char.color }}>{char.area}</span>
-                      </div>
-                      <div className="space-y-3 text-sm text-slate-600 mb-8 flex-grow text-left text-pretty">
-                        <div className="flex border-b border-slate-50 pb-2 text-left text-pretty"><span className="w-24 font-black text-slate-400 shrink-0 text-left">モチーフ</span><b className="text-slate-800 text-left">{char.motif}</b></div>
-                        <div className="flex border-b border-slate-50 pb-2 text-left text-pretty"><span className="w-24 font-black text-slate-400 shrink-0 text-left">出身地</span><b className="text-slate-800 text-left">{char.from}</b></div>
-                        <div className="flex pb-2 text-left text-left text-pretty"><span className="w-24 font-black text-slate-400 shrink-0 text-left">イラスト</span><b className="text-slate-800 text-left">{char.illustrator}</b></div>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-slate-100 mt-auto"><div className="h-full rounded-full transition-all duration-700" style={{ backgroundColor: char.color, width: '100%' }}></div></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <section id="about" className="py-20 bg-rose-100 text-center">
+            <SectionTitle en="ABOUT" ja="について" />
+            <p>静岡を盛り上げる個人サークルです！</p>
           </section>
 
-          {/* 5. Links Area */}
-          <section id="links" className="py-20 px-4 bg-rose-50 relative border-t border-rose-100 text-center text-pretty">
-            <div className="max-w-4xl mx-auto">
-              <SectionTitle en="LINKS" ja="公式リンク" />
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center text-pretty">
-                <a href="https://x.com/chillcreate_v" target="_blank" className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 bg-black text-white group text-center text-pretty">
-                  <Icon name="twitter" className="w-10 h-10 mb-2 transform group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-xs tracking-wider uppercase whitespace-nowrap text-center text-pretty">𝕏 (Twitter)</span>
-                </a>
-                <a href="https://www.instagram.com/chillcreate_v/?hl=ja" target="_blank" className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white group text-center text-pretty">
-                  <Icon name="instagram" className="w-10 h-10 mb-2 transform group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-xs tracking-wider uppercase whitespace-nowrap text-center text-pretty">Instagram</span>
-                </a>
-                <a href="https://youtube.com/@chillcreate_v?si=Fw_HSbG6yyzgUROY" target="_blank" className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 bg-red-600 text-white group text-center">
-                  <Icon name="youtube" className="w-10 h-10 mb-2 transform group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-xs tracking-wider uppercase whitespace-nowrap text-center text-pretty">YouTube</span>
-                </a>
-                <a href="https://chillcreate.booth.pm/" target="_blank" className="flex flex-col items-center justify-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 bg-rose-500 text-white group text-center">
-                  <Icon name="shopping-bag" className="w-10 h-10 mb-2 transform group-hover:scale-110 transition-transform" />
-                  <span className="font-bold text-xs tracking-wider uppercase whitespace-nowrap text-center text-pretty">BOOTH</span>
-                </a>
-              </div>
-            </div>
-          </section>
-
-          {/* 6. Guidelines Area */}
-          <section id="guidelines" className="py-20 px-4 bg-white border-t border-rose-100 text-center text-pretty overflow-visible">
-            <div className="max-w-6xl mx-auto relative flex flex-col items-center md:flex-row md:justify-center gap-14 text-pretty">
-              
-              <div className="hidden lg:flex flex-col gap-12 w-56 shrink-0 justify-center text-pretty">
-                <div className="w-56 h-56 hover-tilt cursor-pointer"><SmartImage src="mini/mini_chill.png" alt="ちるミニ" className="w-full h-full" /></div>
-                <div className="w-56 h-56 hover-tilt cursor-pointer"><SmartImage src="mini/mini_kohaku.png" alt="琥珀ミニ" className="w-full h-full" /></div>
-              </div>
-
-              <div className="max-w-3xl w-full text-center text-pretty">
-                <SectionTitle en="GUIDELINES" ja="二次創作ガイドライン" />
-                <div className="bg-slate-50 border border-rose-100 rounded-2xl p-8 space-y-4 text-sm text-slate-700 leading-relaxed font-bold text-left shadow-inner text-pretty">
-                  <p>『ちるクリエイト』のキャラクターを愛していただきありがとうございます。皆様の二次创作活動を応援しております。</p>
-                  <ul className="list-disc pl-5 space-y-2 text-pretty text-left">
-                    <li>公序良俗に反する内容は禁止します。</li>
-                    <li>公式の制作物であると誤解を招くような表現はご遠慮ください。</li>
-                    <li className="text-red-500 text-base font-black text-left">当サークルの画像・イラストを使用したAIによる画像生成・学習は一切禁止いたします。</li>
-                    <li>非営利目的の有償頒布については常識の範囲内で許可いたします.</li>
-                    <li className="text-rose-500 font-black text-pretty text-left text-pretty">作品をSNS等に投稿する際は、ぜひハッシュタグ<span className="font-black px-2 py-0.5 bg-rose-100 rounded mx-1">#ちるクリエイトFA</span>をつけて投稿してください！楽しみにしています！</li>
-                  </ul>
+          <section id="characters" className="py-20 px-4 max-w-6xl mx-auto">
+            <SectionTitle en="CHARACTERS" ja="キャラクター" />
+            <div className="grid md:grid-cols-3 gap-8">
+              {characters.map(char => (
+                <div key={char.id} className="p-6 border rounded-3xl cursor-pointer" onClick={() => setSelectedChar(char)}>
+                  <h3 className="text-2xl font-black">{char.name}</h3>
+                  <p>{char.catch}</p>
                 </div>
-              </div>
-
-              <div className="hidden lg:flex flex-col gap-12 w-56 shrink-0 justify-center text-pretty">
-                <div className="w-56 h-56 hover-tilt cursor-pointer"><SmartImage src="mini/mini_chacha.png" alt="茶々ミニ" className="w-full h-full" /></div>
-                <div className="w-56 h-56 hover-tilt cursor-pointer"><SmartImage src="mini/mini_10.png" alt="10ミニ" className="w-full h-full" /></div>
-              </div>
-
-              <div className="lg:hidden flex flex-wrap justify-center gap-4 mt-8">
-                {['mini/mini_chill.png', 'mini/mini_kohaku.png', 'mini/mini_chacha.png', 'mini/mini_10.png'].map((src, i) => (
-                  <div key={i} className="w-24 h-24 hover-tilt cursor-pointer text-center text-pretty"><SmartImage src={src} alt="ミニキャラ" className="w-full h-full" /></div>
-                ))}
-              </div>
+              ))}
             </div>
           </section>
 
-          {/* 7. Credits Area */}
-          <section id="credits" className="py-20 px-4 bg-slate-800 text-rose-50 text-left text-pretty text-pretty">
-            <div className="max-w-6xl mx-auto text-left text-pretty text-pretty">
-              <SectionTitle en="CREDITS" ja="制作クレジット" />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-                <div>
-                  <h3 className="text-xl font-black text-rose-300 mb-6 border-b border-slate-700 pb-2 uppercase text-left text-pretty">Character Design</h3>
-                  <ul className="space-y-3 text-sm text-left text-pretty">
-                    {characters.map(char => (
-                      <li key={char.id} className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty">
-                        <span>{char.name}</span><span className="font-bold text-white whitespace-nowrap ml-2 text-left">{char.illustrator}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-white mb-6 border-b border-slate-700 pb-2 uppercase text-left text-pretty">Special Illustration</h3>
-                  <ul className="space-y-3 text-sm text-left text-pretty">
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>ミニキャライラスト</span><span className="font-bold text-white ml-2 text-left">ねこぐさ艦長</span></li>
-                    <li className="flex justify-between pb-1 border-b border-slate-700 text-left text-pretty"><span>ぬい風イラスト</span><span className="font-bold text-white ml-2 text-left">Noa</span></li>
-                    <li className="flex justify-between pb-1 border-b border-slate-700 text-left text-pretty"><span>Topボタンミニイラスト</span><span className="font-bold text-white ml-2 text-left">ペペロンロン</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-rose-300 mb-6 border-b border-slate-700 pb-2 uppercase text-left text-pretty">Other</h3>
-                  <ul className="space-y-3 text-sm text-left text-pretty">
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>サークルリーダー/企画/制作</span><span className="font-bold text-white ml-2 text-right">てれ子</span></li>
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>ディレクション/制作</span><span className="font-bold text-white ml-2 text-right">八の字</span></li>
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>音楽</span><span className="font-bold text-white ml-2 text-right">BARRELPIYA</span></li>
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>シナリオライター</span><span className="font-bold text-white ml-2 text-right">diemonzi</span></li>
-                    <li className="flex justify-between border-b border-slate-700 pb-1 text-left text-pretty"><span>ロゴ制作</span><span className="font-bold text-white ml-2 text-right">てれ子</span></li>
-                    <li className="flex justify-between pb-1 border-b border-slate-700 text-left text-pretty"><span>ウェブ制作</span><span className="font-bold text-white ml-2 text-right">八の字</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 8. Contact Area */}
-          <section id="contact" className="py-24 px-4 bg-rose-400 text-white text-center relative overflow-hidden text-pretty text-pretty">
-            <div className="max-w-2xl mx-auto relative z-10 text-center text-pretty">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase text-center text-pretty">Contact</h2>
-              <p className="mb-10 font-bold opacity-90 tracking-widest text-lg text-center text-pretty text-pretty">お問い合わせはこちらから</p>
-              
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-10 border border-white/20 text-center text-pretty">
-                <p className="text-sm font-black mb-2 opacity-80 uppercase tracking-widest text-center text-pretty text-pretty">Official Email</p>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center text-pretty">
-                  <span className="text-lg md:text-2xl font-black tracking-wider break-all text-center text-pretty">{contactEmail}</span>
-                  <button onClick={handleCopyEmail} className="flex items-center gap-2 bg-white text-rose-500 text-xs font-black py-2 px-4 rounded-full hover:bg-rose-50 transition-colors shrink-0 shadow-md uppercase whitespace-nowrap text-center text-pretty text-pretty">
-                    <Icon name="copy" className="w-3 h-3" /> {copyStatus}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 text-center text-pretty text-pretty">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpk392xNQB7vSgQ5Zl7bVX8XVEMohXMhRKZ5ijc3Zpu9gqUg/viewform?usp=header/" target="_blank" className="flex items-center justify-center gap-3 bg-white text-rose-500 font-black text-xl px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-all w-full md:w-auto text-pretty">
-                  Googleフォーム<Icon name="external-link" className="w-6 h-6 text-pretty" />
-                </a>
-                <a href={`mailto:${contactEmail}`} className="flex items-center justify-center gap-3 bg-rose-600 text-white font-black text-xl px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-all w-full md:w-auto border-2 border-rose-300/30 text-pretty text-pretty">
-                  メールで送る<Icon name="mail" className="w-6 h-6" />
-                </a>
-              </div>
-              <p className="mt-8 text-xs font-bold opacity-70 text-center text-pretty text-pretty text-pretty text-pretty text-pretty">※「メールで送る」が反応しない場合は、アドレスをコピーしてお使いください。</p>
-            </div>
-          </section>
-
-          {/* 9. Footer */}
-          <footer className="bg-rose-950 text-rose-300 py-10 text-center text-xs font-bold tracking-[0.3em] uppercase text-pretty text-pretty text-pretty">
-            <p>&copy; 2026 ちるクリエイト All Rights Reserved.</p>
-          </footer>
-
-          {/* Modal with Voice Playback */}
           {selectedChar && (
-            <div className="fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 bg-black/90 backdrop-blur-sm animate-in fade-in duration-300 text-left text-pretty text-pretty text-pretty" onClick={() => setSelectedChar(null)}>
-              <div className="relative w-full max-w-5xl max-h-[90vh] md:min-h-[600px] bg-white rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in zoom-in-95 duration-300 text-pretty text-pretty text-pretty text-pretty" onClick={e => e.stopPropagation()}>
-                <button onClick={() => setSelectedChar(null)} className="absolute top-4 right-4 z-[100] p-3 bg-black/40 hover:bg-black/60 text-white rounded-full transition-colors backdrop-blur-md shadow-lg border border-white/20 text-pretty text-pretty text-pretty">
-                   <Icon name="close" className="w-6 h-6 sm:w-8 sm:h-8 text-pretty text-pretty text-pretty" />
-                </button>
-                <div className="w-full flex flex-col md:flex-row overflow-y-auto custom-scroll text-left text-pretty text-pretty text-pretty text-pretty text-pretty">
-                  <div className="w-full md:w-2/3 h-[45vh] md:h-auto min-h-[400px] bg-slate-100 flex items-center justify-center p-0 relative shrink-0 text-pretty text-pretty text-pretty text-pretty" style={{ backgroundColor: selectedChar.color + '10' }}>
-                     <div className="absolute inset-0 opacity-10 pointer-events-none text-pretty text-pretty text-pretty" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)', backgroundSize: '32px 32px', color: selectedChar.color }}></div>
-                     <div className="w-full h-full flex items-center justify-center overflow-hidden text-center text-pretty text-pretty text-pretty text-pretty">
-                        <SmartImage 
-                          src={selectedChar.mainImg} 
-                          alt={`${selectedChar.name} 全身立ち絵`} 
-                          className="max-w-full max-h-full h-full w-auto object-contain object-center drop-shadow-2xl text-pretty text-pretty text-pretty text-pretty text-pretty" 
-                        />
-                     </div>
-                  </div>
-                  <div className="w-full md:w-1/3 p-6 sm:p-8 md:p-10 flex flex-col justify-center bg-white relative text-left text-pretty text-pretty text-pretty text-pretty">
-                    <span className="text-[10px] sm:text-[12px] font-black text-slate-400 mb-1 sm:mb-2 tracking-[0.3em] uppercase whitespace-nowrap text-left text-pretty text-pretty text-pretty text-pretty">{selectedChar.furigana}</span>
-                    <h2 className="text-3xl sm:text-5xl font-black text-slate-800 mb-4 sm:mb-6 leading-tight text-left leading-none text-pretty text-pretty text-pretty text-pretty text-pretty">{selectedChar.name}</h2>
-                    
-                    <div className="w-12 sm:w-16 h-1.5 sm:h-2 rounded-full mb-6 sm:mb-8 text-left text-pretty text-pretty text-pretty text-pretty" style={{ backgroundColor: selectedChar.color }}></div>
-                    <p className="text-base sm:text-xl font-bold text-slate-600 italic mb-8 sm:mb-10 leading-relaxed text-pretty text-left text-pretty text-pretty text-pretty text-pretty text-pretty">"{selectedChar.catch}"</p>
-                    
-                    <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-8 text-left text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty">
-                      {[
-                        { label: 'Area / From', value: `${selectedChar.area} / ${selectedChar.from}` },
-                        { label: 'Motif / Color', value: `${selectedChar.motif} / ${selectedChar.colorName}` },
-                        { label: 'Illustration', value: selectedChar.illustrator }
-                      ].map((item, idx) => (
-                        <div key={idx} className="bg-slate-50 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-100 text-left text-pretty text-pretty text-pretty text-pretty">
-                          <p className="text-slate-400 mb-0.5 sm:mb-1 font-black text-[10px] uppercase tracking-widest text-left text-pretty text-pretty text-pretty text-pretty text-pretty">{item.label}</p>
-                          <p className="font-bold text-slate-800 text-sm sm:text-lg text-left text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty">{item.value}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex justify-center mt-2 text-center text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty">
-                      <button 
-                        onClick={() => playVoice(selectedChar.voiceSrc)}
-                        className="relative group flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-rose-400 text-white rounded-full shadow-lg hover:bg-rose-500 hover:scale-110 transition-all duration-300 overflow-visible text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty"
-                        title="ボイスを再生"
-                      >
-                        {isPlaying && (
-                          <div className="absolute inset-0 rounded-full bg-rose-400 animate-ping-slow pointer-events-none text-pretty text-pretty text-pretty text-pretty"></div>
-                        )}
-                        <Icon name={isPlaying ? "volume" : "play"} className="w-8 h-8 sm:w-10 sm:h-10 text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            <div className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4" onClick={() => setSelectedChar(null)}>
+              <div className="bg-white p-8 rounded-3xl max-w-lg w-full" onClick={e => e.stopPropagation()}>
+                <h2 className="text-3xl font-black">{selectedChar.name}</h2>
+                <button onClick={() => playVoice(selectedChar.voiceSrc)} className="mt-4 bg-rose-400 text-white px-6 py-2 rounded-full">ボイス再生</button>
               </div>
             </div>
           )}
-
-          {/* Back to Top Button */}
-          {showTopBtn && (
-            <button onClick={() => scrollTo('hero')} className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 w-20 h-20 sm:w-32 sm:h-32 drop-shadow-2xl animate-slide-fade flex items-center justify-center group text-center text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty">
-              <div className="w-full h-full flex items-center justify-center relative transition-transform duration-300 hover:scale-110 text-pretty text-pretty text-pretty text-pretty">
-                <SmartImage src="mini/mini1_chill.png" alt="Topへ" className="w-full h-full text-center text-pretty text-pretty text-pretty text-pretty text-pretty" />
-                <div className="absolute inset-0 rounded-full bg-rose-400/0 group-hover:bg-rose-400/10 transition-colors pointer-events-none text-pretty text-pretty text-pretty text-pretty text-pretty"></div>
-              </div>
-              <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] sm:text-[12px] font-black px-2 sm:px-3 py-1 rounded-full shadow-lg border-2 border-white uppercase tracking-tighter text-center leading-none flex items-center justify-center min-w-[36px] sm:min-w-[40px] text-pretty text-pretty text-pretty text-pretty text-pretty text-pretty">Up</span>
-            </button>
-          )}
-
         </div>
       );
     }
